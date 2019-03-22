@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.UserDao">
+
+
+    <select id="getNameById" parameterType="com.example.demo.entity.User" resultType="com.example.demo.entity.User">
+        SELECT * FROM user WHERE ID = #{id}
+    </select>
+
+    <select id="queryPage" parameterType="Object" resultType="com.example.demo.entity.User">
+        SELECT * FROM user
+    </select>
+
+    <select id="getCount" parameterType="Object" resultType="Integer">
+        SELECT COUNT(1) FROM user
+    </select>
+
+    <select id="update" parameterType="Object" resultType="com.example.demo.entity.User">
+        UPDATE USER SET NAME = #{name}
+        WHERE id = #{id}
+    </select>
+
+</mapper>
